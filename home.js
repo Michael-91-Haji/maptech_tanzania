@@ -3,8 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initImageSlider();
     initSmoothScroll();
-    initFeatureAnimations();
-    initCookieBanner?.();
 });
 
 function initImageSlider() {
@@ -83,29 +81,41 @@ function initSmoothScroll() {
     });
 }
 
-function initFeatureAnimations() {
-    const observer = new IntersectionObserver(
-        entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        },
-        { threshold: 0.1, rootMargin: '0px 0px -100px 0px' }
-    );
+function initScrollAnimations() {
+    const featureCards = document.querySelectorAll(".feature-card");
+    const cta = document.querySelector(".cta-content");
 
-    document.querySelectorAll('.feature-card, .cta-content').forEach(el => {
-        if (!el.classList.contains('animate-fade-in-left') &&
-            !el.classList.contains('animate-fade-in-right') &&
-            !el.classList.contains('animate-scale-in')) {
-            el.classList.add('animate-fade-in'); 
-        }
-        el.classList.add('animate-hidden');
-        observer.observe(el);
+    // ✅ Remove old animation classes that may conflict
+    featureCards.forEach(card => {
+        card.classList.remove("animate-fade-in", "animate-fade-in-left", "animate-fade-in-right", "animate-visible");
     });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+
+                if (entry.target.classList.contains("feature-card")) {
+                    entry.target.classList.add("animate-feature");
+                }
+
+                if (entry.target.classList.contains("cta-content")) {
+                    entry.target.classList.add("animate-cta");
+                }
+
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.25,
+        rootMargin: "0px 0px -100px 0px"
+    });
+
+    featureCards.forEach(card => observer.observe(card));
+    observer.observe(cta);
 }
+
+document.addEventListener("DOMContentLoaded", initScrollAnimations);
+
 
 const BANNER_DELAY = 3000;
 
@@ -195,4 +205,3 @@ function clearConsent() {
   updateToggles();
   showBanner();
 }
-

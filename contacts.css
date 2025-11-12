@@ -1,0 +1,330 @@
+.co-section {
+    padding: 4rem 1rem 2rem; /* reduced bottom padding */
+    position: relative;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 48rem;
+    margin: 0 auto 2rem; /* smaller bottom margin */
+}
+
+.section-title {
+    margin-top: 3rem;
+    font-size: 2.8rem;
+}
+
+.section-description {
+    font-size: 1.125rem;
+    color: black;
+}
+
+.cta-description {
+    font-size: 2rem;
+    color: var(--minor-color);
+}
+
+/* Container */
+.co-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    margin-top: -2rem; /* smaller top/bottom padding */
+}
+
+/* Grid Layout */
+.grid {
+    display: grid;
+    gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+}
+
+/* Card */
+.card {
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    border: 1px solid var(--color-border);
+    animation: fadeIn 0.6s ease-out;
+    margin-bottom: 0;
+}
+
+.card h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 0.75rem 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--minor-color);
+    box-shadow: 0 0 8px 3px rgba(0, 0, 225, 0.165);
+    transform: scale(1.01);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* Submit Button */
+#submitBtn {
+    width: 100%;
+    padding: 0.75rem 2rem;
+    background: var(--minor-color);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+#submitBtn:hover {
+    background: rgb(1, 1, 190);
+    transform: scale(1.02);
+}
+
+#submitBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Info Section */
+.info-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.info-section > p {
+    color: black;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+/* Info Card */
+.info-card {
+    background: white;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--color-border);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center; /* vertically center icon and text */
+    gap: 1rem;
+    animation: scaleIn 0.7s ease-out;
+}
+
+.info-card:hover {
+    border-color: var(--minor-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.icon-wrapper {
+    background: rgba(0, 119, 190, 0.1);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.info-card:hover .icon-wrapper {
+    background: rgba(0, 119, 190, 0.2);
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    color: var(--minor-color);
+}
+
+.info-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+    color: black;
+}
+
+.info-content p {
+    margin-bottom: 0.25rem;
+}
+
+.info-detail {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.info-subtitle {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+/* Hours Card */
+.hours-card {
+    background: rgba(0, 119, 190, 0.1);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    animation: scaleIn 0.8s ease-out 0.9s backwards;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.hours-row {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.95rem;
+}
+
+.hours-day {
+    color: var(--muted);
+}
+
+.hours-time {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.toast {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border-left: 6px solid rgb(92, 220, 92);
+    max-width: 400px;
+    z-index: 1000;
+    animation: slideInRight 0.5s ease-out;
+    display: none;
+}
+
+.toast.show {
+    display: block;
+}
+
+.toast-title {
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+    color: black;
+}
+
+.toast-description {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .hero, .co-section {
+        padding: 2rem 1rem;
+    }
+
+    .container {
+        padding: 1.5rem 1rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .toast {
+        right: 1rem;
+        left: 1rem;
+        max-width: none;
+    }
+}
+
+.send-icon {
+    transition: transform 0.3s ease;
+}
+
+button:hover .send-icon {
+    transform: translateX(4px);
+}
+
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.scale-in {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.show {
+    opacity: 1 !important;
+    transform: translateY(0) scale(1) !important;
+}
+
+.fade-up:nth-child(1) { transition-delay: .40s; }
+.fade-up:nth-child(2) { transition-delay: .30s; }
+.fade-up:nth-child(3) { transition-delay: .55s; }

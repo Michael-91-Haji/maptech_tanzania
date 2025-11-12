@@ -54,28 +54,27 @@
 .service-tag {
     position: absolute;
     z-index: 2;
-    right: -0.5%;
-    top: 2%;
+    right: 0;
+    top: 3%;
+    transform: translateX(88%);
     background: var(--minor-color);
     padding: 0.6rem 0.5rem;
     color: white;
     cursor: pointer;
     font-size: 0.875rem;
     border-bottom-left-radius: 0.8rem;
-    border-top-left-radius:0.8rem;
-    transform: translateX(88%);
-    transition: 0.3s ease-in-out;
+    border-top-left-radius: 0.8rem;
+    transition: all 0.5s ease-in-out;
 }
 
 .service-tag span {
     padding-left: 1rem;
 }
 
-.service-tag:hover {
+.service-tag.animate, .service-tag:hover {
     transform: translateX(0);
-    text-align: center;
-
 }
+
 
 .service-card:hover {
     transform: translateY(-8px);

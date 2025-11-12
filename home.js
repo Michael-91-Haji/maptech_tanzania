@@ -144,7 +144,7 @@ function hideBannerCompletely() {
 }
 
 function hideBannerImmediately() {
-  banner.style.transform = "translateY(15rem)";
+  banner.style.transform = "translateY(50rem)";
   overlay.style.opacity = 0;
   overlay.style.pointerEvents = "none";
 }
@@ -195,3 +195,4 @@ function clearConsent() {
   updateToggles();
   showBanner();
 }
+

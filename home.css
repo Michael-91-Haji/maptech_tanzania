@@ -550,7 +550,7 @@
     left: 0;
     right: 0;
     z-index: 9999;
-    transform: translateY(15rem);
+    transform: translateY(50rem);
     transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
 }
 
@@ -668,4 +668,5 @@
 
 .toggle-switch.checked .toggle-thumb {
     transform: translateX(1.25rem);
+
 }
